@@ -3,11 +3,11 @@ import streamlit as st
 from joblib import load
 from sklearn.metrics import mean_squared_error, r2_score
 
-model = load('song_popularity.joblib')
+model = load('4th-lesson/song_popularity.joblib')
 
 try:
-  x_test=pd.read_csv('song_x_test.csv')
-  y_test=pd.read_csv('song_y_test.csv')
+  x_test=pd.read_csv('4th-lesson/song_x_test.csv')
+  y_test=pd.read_csv('4th-lesson/song_y_test.csv')
   y_test=y_test.squeeze()
   show_accuracy=True
 except:
