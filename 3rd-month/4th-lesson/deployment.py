@@ -28,3 +28,33 @@ loudness = st.number_input('Loudness level', min_value=00.0, max_value=60.0)
 speechiness = st.number_input('Speechiness level', min_value=0.0, max_value=100.0)
 tempo = st.number_input('Tempo level', min_value=50.0, max_value=200.0)
 audio_valence = st.number_input('Audio_valence level', min_value=0.0, max_value=100.0)
+
+if st.button('Predict the popularity of the song :)'):
+  input_date=pd.DataFrame([{
+    'song_name': song_name,
+    'song_duration_ms': song_duration_ms,
+    'acousticness': acousticness,
+    'danceability': danceability,
+    'energy': energy,
+    'instrumentalness': instrumentalness,
+    'liveness': liveness,
+    'loudness': loudness,
+    'speechiness': speechiness,
+    'tempo': tempo,
+    'audio_valence': audio_valence,
+  }])
+
+  
+  prediction = model.predict(input_data)[0]
+  st.success(f"Predicted song popularity score: {prediction: .2}")
+
+if show_accuracy:
+        from sklearn.metrics import mean_squared_error, r2_score
+
+        y_pred = model.predict(x_test)
+        mse = mean_squared_error(y_test, y_pred)
+        r2 = r2_score(y_test, y_pred)
+        st.metric('Test R² score:', f"{r2:.2f}")
+        st.metric('Test MSE:', f"{mse:.2f}")
+else:
+        st.info('Test data not available to evaluate the model.')
