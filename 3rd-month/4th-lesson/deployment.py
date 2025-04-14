@@ -1,7 +1,7 @@
 import pandas as pd
 import streamlit as st
 from joblib import load
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import mean_squared_error, r2_score
 
 model = load('song_popularity.joblib')
 
