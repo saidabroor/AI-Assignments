@@ -1,0 +1,5 @@
+pandas
+skicit-learn
+joblib
+matplotlib
+seaborn
