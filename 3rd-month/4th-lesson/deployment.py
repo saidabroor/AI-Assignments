@@ -45,7 +45,7 @@ if st.button('Predict the popularity of the song :)'):
   }])
 
   
-  prediction = model.predict(input_data)[0]
+  prediction = model.predict(input_date)[0]
   st.success(f"Predicted song popularity score: {prediction: .2}")
 
 if show_accuracy:
