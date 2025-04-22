@@ -6,8 +6,8 @@ from sklearn.metrics import accuracy_score
 model = load('electricty.joblib')
 
 try:
-  x_test=pd.read_csv('4th-lesson/song_x_test.csv')
-  y_test=pd.read_csv('4th-lesson/song_y_test.csv')
+  x_test=pd.read_csv('x_test_e.csv')
+  y_test = pd.read_csv('y_test_e.csv')
   y_test=y_test.squeeze()
   show_accuracy=True
 except:
